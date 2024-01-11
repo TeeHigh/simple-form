@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Personal Page</title>
 </head>
 <body>
-    <h1>Welcome to your personal page <span th:text="${userLogin}"></span></h1>
+    <div class="hero-container">
+        <h1>Welcome to your personal page <span th:text="${userLogin}"></span> 😊</h1>
+        <div class="nav-links">
+            <a href="/register" class="secondary-button">Sign Up</a>
+            <a href="/login" class="secondary-button">Sign In</a>
+        </div>
+    </div>
+    
 </body>
 </html>

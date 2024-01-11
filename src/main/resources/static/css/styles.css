@@ -29,6 +29,9 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     /* margin: auto; */
+    display: grid;
+    place-items: center;
+    transition: 2s;
 }
 
 .heading{
@@ -51,7 +54,6 @@ body {
     background: transparent;
     width: 80%;
     padding: 10px;
-    /* border: 1px solid rgba(225, 225, 225, 0.25); */
     border: none;
     border-radius: 5px;
     outline: none;
