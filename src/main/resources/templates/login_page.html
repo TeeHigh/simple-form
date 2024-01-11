@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- -------------Login Section-------------- -->
+    <div id="login-form-container">
+        <h2 class="heading">Login</h2>
+        <form id="login-form" method="post" action="/login" th:object="${loginRequest}"> <!---->
+            <div class="inputbox">
+                <input type="text" id="login-username" name="login" 
+                required="required">
+                <span>First Name</span>
+            </div>
+            <div class="inputbox password">
+                <input type="password" id="login-password" class="password-input" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contaim at least one number and one uppercase and lowercase letter and at least one character" required="required">
+                <span>Password</span>
+                <i class="fa fa-eye" id="showBtn" onclick="togglePassword('login-password')"></i>
+            </div>
+
+            <button class="primary-button" type="submit" name="sign-in" value="Login">Login</button>
+            <!-- onclick="login()" -->
+        </form>
+        <div class="secondary-button-container">
+            <p>
+                New user?
+                <a class="secondary-button" href="/register">Create Account</a>
+            </p>
+        </div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- -------------Sign Up Section-------------- -->
+    <div id="registration-form">
+        <h2 class="heading">Sign Up</h2>
+        <form id="registration-form" method="post" action="/register" th:object="${registerRequest}">
+            <div class="inputbox">
+                <input 
+                    type="text" 
+                    id="register-username" 
+                    name="login" required="required"
+                >
+                <span>First Name</span>
+            </div>
+            <div class="inputbox">
+                <input
+                    type="email"
+                    id="register-username"
+                    name="email" required="required"
+                >
+                <span>Email</span>
+            </div>
+            <!-- <div class="inputbox">
+                <input
+                    type="email" 
+                    id="register-email"
+                    name="email"
+                >
+                <span>Email</span>
+            </div> -->
+            <div class="inputbox password">
+                <input type="password" id="register-password" name="password" class="password-input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contaim at least one number and one uppercase and lowercase letter and at least one character" required="required">
+                <span>Password</span>
+                <i class="fa fa-eye" id="showBtn" onclick="togglePassword('register-password')"></i>
+            </div>
+
+            <button class="primary-button" type="submit" value="Register">Sign up</button>
+
+        </form>
+        <div class="secondary-button-container">
+            <p>Already have an account? 
+                <a class="secondary-button" href="/login">Login</a>
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
