@@ -13,3 +13,6 @@ function togglePassword(inputId) {
         showBtn.classList.add('fa-eye');
     }
 }
+
+// let inputBox = document.getElementById("input-box")
+// let input = document.getElementsByTagName("input")

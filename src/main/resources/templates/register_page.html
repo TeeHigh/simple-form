@@ -9,37 +9,47 @@
 </head>
 <body>
     <!-- -------------Sign Up Section-------------- -->
-    <div id="registration-form">
+    <div id="registration-form-container">
         <h2 class="heading">Sign Up</h2>
         <form id="registration-form" method="post" action="/register" th:object="${registerRequest}">
             <div class="inputbox">
+                <span>
+                    <i class="fa fa-user"></i>
+                </span>
                 <input 
                     type="text" 
-                    id="register-username" 
+                    id="register-username"
+                    placeholder="First Name" 
                     name="login" required="required"
                 >
-                <span>First Name</span>
             </div>
             <div class="inputbox">
+                <span>
+                    <i class="fa fa-envelope"></i>
+                </span>
                 <input
                     type="email"
-                    id="register-username"
+                    id="register-email"
+                    placeholder="Email"
                     name="email" required="required"
                 >
-                <span>Email</span>
             </div>
-            <!-- <div class="inputbox">
-                <input
-                    type="email" 
-                    id="register-email"
-                    name="email"
-                >
-                <span>Email</span>
-            </div> -->
             <div class="inputbox password">
-                <input type="password" id="register-password" name="password" class="password-input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contaim at least one number and one uppercase and lowercase letter and at least one character" required="required">
-                <span>Password</span>
-                <i class="fa fa-eye" id="showBtn" onclick="togglePassword('register-password')"></i>
+                <span>
+                    <i class="fa fa-lock"></i>
+                </span>
+                <div class="input-area">
+                    <input 
+                    type="password" 
+                    id="register-password" 
+                    name="password" 
+                    class="password-input" 
+                    placeholder="Password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contaim at least one number and one uppercase and lowercase letter and at least one character"
+                    required="required">
+                    
+                    <i class="fa fa-eye" id="showBtn" onclick="togglePassword('register-password')"></i>
+                </div>
             </div>
 
             <button class="primary-button" type="submit" value="Register">Sign up</button>

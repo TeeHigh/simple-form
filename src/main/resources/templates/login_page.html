@@ -14,19 +14,22 @@
     <div id="login-form-container">
         <h2 class="heading">Login</h2>
         <form id="login-form" method="post" action="/login" th:object="${loginRequest}"> <!---->
-            <div class="inputbox">
+            <div class="inputbox" id="input-box">
+                <span>
+                    <i class="fa fa-user"></i>
+                </span>
                 <input type="text" id="login-username" name="login" 
-                required="required">
-                <span>First Name</span>
+                required="required" placeholder="First Name">
             </div>
-            <div class="inputbox password">
-                <input type="password" id="login-password" class="password-input" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contaim at least one number and one uppercase and lowercase letter and at least one character" required="required">
-                <span>Password</span>
+            <div class="inputbox password" id="input-box">
+                <span>
+                    <i class="fa fa-lock"></i>
+                </span>
+                <input type="password" id="login-password" class="password-input" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" title="Must contaim at least one number and one uppercase and lowercase letter and at least one character" required="required">
                 <i class="fa fa-eye" id="showBtn" onclick="togglePassword('login-password')"></i>
             </div>
 
             <button class="primary-button" type="submit" name="sign-in" value="Login">Login</button>
-            <!-- onclick="login()" -->
         </form>
         <div class="secondary-button-container">
             <p>
@@ -35,7 +38,7 @@
             </p>
         </div>
     </div>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
 </body>
 
 </html>

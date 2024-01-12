@@ -20,18 +20,35 @@ body {
     gap: 1em;
     justify-content: center;
 }
-
+.nav-links a{
+    color: #0056b3;
+}
 
 #login-form-container,
-#registration-form {
+#registration-form-container {
     background-color: #fff;
-    padding: 20px;
+    padding: 2em;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* margin: auto; */
     display: grid;
     place-items: center;
     transition: 2s;
+}
+
+#login-form,
+#registration-form {
+    
+    background-color: #fff;
+    padding: 3em 2em 2em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    display: flex;
+    gap: 1.5em;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: center; */
+    
 }
 
 .heading{
@@ -39,71 +56,43 @@ body {
     text-align: center;
     margin: 1em 0 1.5em;
 }
+/* -------Input Area------- */
 .inputbox{
-    position: relative;
     display: flex;
+    gap: 5px;
     align-items: center;
-    /* width: 250px; */
-    margin: 1.5em;
-    background: #314962;
+    border-bottom: 3px solid #007BFF;
 }
-.password{
-    justify-content: space-around;
+.inputbox span i{
+    width: 2em;
+    text-align: center;
+    background: #aaa;
+    padding: 5px;
 }
 .inputbox input{
-    background: transparent;
-    width: 80%;
-    padding: 10px;
     border: none;
-    border-radius: 5px;
     outline: none;
-    color: #fff;
-    font-size: 1em;
-    transition: 0.5s;
+    font-size: large;
+    padding-left: 3px;
+    /* background-color: rgb(234, 188, 188); */
+    max-width: 85%;
 }
-.inputbox span{
-    position: absolute;
-    left: 0;
-    padding: 10px;
-    pointer-events: none;
-    color: rgba(225, 225, 225, 0.25);
+.inputbox input::placeholder{
     text-transform: uppercase;
-    transition: 0.5s;
-    
+    letter-spacing: 1px;
 }
-.inputbox i{
-    padding: 3.2px;
-    background: #fff;
-    color: #314962;
-    transition: 0.5s;
-    font-size: 1em;
-    border-radius: 50%;
+.fa-eye, .fa-eye-slash{
     cursor: pointer;
+    background: #ccc;
+    padding: .3em;
+    color: #005aba;
+    border-radius: 50%;
 }
-
-.inputbox input:valid ~ span,
-.inputbox input:focus ~ span
-{
-    color: #00dfc4;
-    transform: translateX(10px) translateY(-18px);
-    font-size: 0.75em;
-    padding: 0 10px;
-    background: #fff;
-    letter-spacing: 0.2em;
+.fa-eye{
+    visibility: hidden;
 }
-.inputbox:last-child input:valid ~ span,
-.inputbox:last-child input:focus ~ span
-{
-    background: #00dfc4;
-    color: #1d2b3a;
-    border-radius: 2px;
-}
-.inputbox:valid,
-.inputbox:focus
-{
-    border: 1px solid #00dfc4;
-    /* outline: none; */
-
+.inputbox input:not(:placeholder-shown) ~ .fa-eye{
+    visibility: visible;
 }
 
 /* -------Buttons-------- */
@@ -117,7 +106,10 @@ button{
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    margin: .2em;
+    margin: 1em auto 0;
+    width: 50%;
+    font-size: large;
+    font-weight: bold;
 }
 .primary-button:hover {
     background-color: #0056b3;
@@ -125,7 +117,7 @@ button{
 .secondary-button-container{
     margin-top: 1em;
 }
-.nav-links > .secondary-button{
+.secondary-button{
     color: #0056b3;
 }
 .secondary-button{
@@ -138,3 +130,11 @@ button{
     color: #70879f;
 }
 
+@media(max-width: 700px){
+    #login-form,
+    #registration-form {
+        padding: 2em 1em;
+        
+        
+    }
+}
