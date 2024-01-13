@@ -53,6 +53,8 @@ body {
 
 .heading{
     text-transform: uppercase;
+    font-weight: 600;
+    font-size: xx-large;
     text-align: center;
     margin: 1em 0 1.5em;
 }
