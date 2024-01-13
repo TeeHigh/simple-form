@@ -3,6 +3,7 @@ package com.simpleform.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.simpleform.exception.DuplicateLoginException;
 import com.simpleform.model.UsersModel;
 import com.simpleform.repository.UsersRepository;
 
@@ -22,7 +23,7 @@ public class UsersService {
         }else{
             if(usersRepository.findFirstByLogin(login).isPresent()){
                 System.out.println("Duplicate login");
-                return null;
+                throw new DuplicateLoginException("Duplicate login");
             }
             UsersModel usersModel = new UsersModel();
             usersModel.setLogin(login);

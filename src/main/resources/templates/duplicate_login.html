@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Duplicate Login</title>
+</head>
+<body>
+    <div class="hero-container">
+        <h1>User already exists 😥. Retry with different details</h1>
+        <p th:text="${errorMessage}" style="color: red;"></p>
+        <div class="nav-links">
+            <a href="/register" class="secondary-button">Sign Up</a>
+            <a href="/login" class="secondary-button">Sign In</a>
+        </div>
+    </div>
+</body>
+</html>
